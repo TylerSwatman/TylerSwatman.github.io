@@ -13,3 +13,10 @@ function gcd_two_numbers(x, y) {
 
 console.log(gcd_two_numbers(12, 13));
 console.log(gcd_two_numbers(9, 3));
+
+function add_two_digits(n)
+   {
+      return n % 10 + Math.floor(n / 10);
+   }
+console.log(add_two_digits(25))
+console.log(add_two_digits(50))
