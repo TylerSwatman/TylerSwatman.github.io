@@ -15,7 +15,7 @@ for (let i = 1; i <= numberOne && i <= numberTwo; i++) {
         gcd = i;
     }
 }
-       document.getElementById("outputGCD").innerHTML= ${gcd};
+       document.getElementById("outputGCD").innerHTML= gcd;
     
 }
 
