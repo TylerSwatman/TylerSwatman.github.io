@@ -4,8 +4,8 @@ let gcd;
 
 document.GetElementById("myButton").onclick(function){
 
-numberOne = document.getElementById("numberOne").value;
-numberTwo = document.getElementById("numberTwo").value;
+var numberOne = document.getElementById("numberOne").value;
+var numberTwo = document.getElementById("numberTwo").value;
 
 
 for (let i = 1; i <= numberOne && i <= numberTwo; i++) {
