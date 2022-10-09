@@ -2,7 +2,7 @@
 let gcd;
 
 
-document.GetElementById("myButton").onclick = function(){
+document.GetElementById("myButton").onclick(){
 
 numberOne = document.getElementById("numberOne").value;
 numberTwo = document.getElementById("numberTwo").value;
