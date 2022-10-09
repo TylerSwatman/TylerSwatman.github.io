@@ -20,26 +20,24 @@ function temperatureConverter(valNum) {
   
 </script> <head>GCD</head>
   
- 
-<script>
+ <script>
+let gcd;
+// take input
+const number1 = prompt('Enter a first positive integer: ');
+const number2 = prompt('Enter a second positive integer: ');
 
-function gcd(a,b)
-{
-    let result = Math.min(a, b); 
-    while (result > 0) {
-        if (a % result == 0 && b % result == 0) {
-            break;
-        }
-        result--;
+// looping from 1 to number1 and number2
+for (let i = 1; i <= number1 && i <= number2; i++) {
+
+    // check if is factor of both integers
+    if( number1 % i == 0 && number2 % i == 0) {
+        gcd = i;
     }
-    return result; 
 }
- 
-let a = 98;
-let b = 56;
-console.log("GCD of ",a," and ",b," is ",gcd(a, b));
 
-</script>
- 
+// display the gcd
+console.log(`HCF of ${number1} and ${number2} is ${gcd}.`);
+  </script>
+  
 </body>
 </html>
