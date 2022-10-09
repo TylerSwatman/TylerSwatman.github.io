@@ -16,6 +16,6 @@ for (let i = 1; i <= numberOne && i <= numberTwo; i++) {
       
     }
 }
-console.log("GCF of ${number1} and ${number2} is ${gcd}.");
+output("GCD of ${number1} and ${number2} is ${gcd}.");
 
 
