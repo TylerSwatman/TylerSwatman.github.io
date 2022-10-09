@@ -16,7 +16,7 @@ for (let i = 1; i <= numberOne && i <= numberTwo; i++) {
     }
 }
        document.getElementById("outputGCD").innerHTML = gcd;
-   console.log(gcd);
+   
     
 }
 
