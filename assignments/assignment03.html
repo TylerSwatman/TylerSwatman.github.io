@@ -18,26 +18,14 @@ function temperatureConverter(valNum) {
   document.getElementById("outputCelcius").innerHTML=(valNum-32)/1.8;
 }
   
-</script> <head>GCD</head>
-  
- <script>
-let gcd;
-// take input
-const number1 = prompt('Enter a first positive integer: ');
-const number2 = prompt('Enter a second positive integer: ');
+</script> 
+  <head>GCD</head>
+  <label id="">Enter first number:</label><br>
+  <input type="text" id="numberOne"><br>
+  <input type="text" id="numberTwo"><br>
+  <button type="button" id="myButton">submit</button>
+   <script src="Assignment03.js"></script>
 
-// looping from 1 to number1 and number2
-for (let i = 1; i <= number1 && i <= number2; i++) {
-
-    // check if is factor of both integers
-    if( number1 % i == 0 && number2 % i == 0) {
-        gcd = i;
-    }
-}
-
-// display the gcd
-console.log(`HCF of ${number1} and ${number2} is ${gcd}.`);
-  </script>
   
 </body>
 </html>
