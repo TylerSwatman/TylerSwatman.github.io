@@ -2,11 +2,14 @@
 let gcd;
 
 
-document.GetElementById("myButton").onclick(function){
 
+document.getElementById("myButton").addEventListener("click", myFunction);
+  
+  function myFunction() {
 var numberOne = document.getElementById("numberOne").value;
 var numberTwo = document.getElementById("numberTwo").value;
-
+numberOne = parseFloat(numberOne);
+numberTwo = parseFloat(numberTwo);
 
 for (let i = 1; i <= numberOne && i <= numberTwo; i++) {
 
@@ -15,10 +18,7 @@ for (let i = 1; i <= numberOne && i <= numberTwo; i++) {
         gcd = i;
     }
 }
+   
        document.getElementById("outputGCD").innerHTML = gcd;
    
-    
 }
-
-
-
