@@ -10,7 +10,7 @@
     cursor: pointer;
 }
 #gameContainer{
-    font-family: "Permanent Marker", cursive;
+    font-family: "Permanent Marker";
     text-align: center;
     text-color: purple;
 }
