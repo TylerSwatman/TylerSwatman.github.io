@@ -37,6 +37,8 @@ function myFunctionOne(){
   document.getElementById("outputSON").innerHTML = sum;
 }
 
+document.getElementById("buttonFour").addEventListener("click", fullName);
+
 function fullName(){
   let fName = document.getElementById("fName").value;
   let lName = document.getElementById("lName").value;
