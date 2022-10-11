@@ -39,25 +39,7 @@ function myFunctionOne(){
 
 }
 
-document.getElementById("nameButton").addEventListener("click",fullName);
-function fullName(){
-  let fName = document.getElementById("fName").value;
-  let lName = document.getElementById("lName").value;
-  let title = document.getElementById("titles").value;
-  let suffix = document.getElementById("suffix").value;
-  if(fName=="First Name" || lName=="Last Name"){
-    alert("you havent entered anything for first or last name");
-  }  
-  if (title!="none" && suffix !="none"){
-      document.getElementById("full name").innerHTML = title + " " + fName + " " + lName + " " + suffix;
-  }else if (title=="none" && suffix =="none"){
-      document.getElementById("full name").innerHTML = fName + " " + lName;
-    }else if(title=="none"){
-    document.getElementById("full name").innerHTML = fName + " " + lName + " " + suffix;
-  }else if(suffix=="none"){
-    document.getElementById("full name").innerHTML = title + " " + fName + " " + lName ;
-  }
-}
+
 
 const cells = document.querySelectorAll(".cell");
 const statusText = document.querySelector("#statusText");
@@ -138,4 +120,23 @@ function restartGame(){
     statusText.textContent = `${currentPlayer}'s turn`;
     cells.forEach(cell => cell.textContent = "");
     running = true;
+}
+document.getElementById("nameButton").addEventListener("click",fullName);
+function fullName(){
+  let fName = document.getElementById("fName").value;
+  let lName = document.getElementById("lName").value;
+  let title = document.getElementById("titles").value;
+  let suffix = document.getElementById("suffix").value;
+  if(fName=="First Name" || lName=="Last Name"){
+    alert("you havent entered anything for first or last name");
+  }  
+  if (title!="none" && suffix !="none"){
+      document.getElementById("full name").innerHTML = title + " " + fName + " " + lName + " " + suffix;
+  }else if (title=="none" && suffix =="none"){
+      document.getElementById("full name").innerHTML = fName + " " + lName;
+    }else if(title=="none"){
+    document.getElementById("full name").innerHTML = fName + " " + lName + " " + suffix;
+  }else if(suffix=="none"){
+    document.getElementById("full name").innerHTML = title + " " + fName + " " + lName ;
+  }
 }
