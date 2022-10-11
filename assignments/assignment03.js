@@ -37,7 +37,7 @@ function myFunctionOne(){
   document.getElementById("outputSON").innerHTML = sum;
 }
 
-document.getElementById("buttonFour").addEventListener("click", fullName);
+
 
 document.getElementById("nameButton").addEventListener("click",fullName);
 function fullName(){
