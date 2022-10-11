@@ -39,6 +39,7 @@ function myFunctionOne(){
 
 document.getElementById("buttonFour").addEventListener("click", fullName);
 
+document.getElementById("nameButton").addEventListener("click",fullName);
 function fullName(){
   let fName = document.getElementById("fName").value;
   let lName = document.getElementById("lName").value;
