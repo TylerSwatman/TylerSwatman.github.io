@@ -35,9 +35,9 @@ function myFunctionOne(){
     num = parseInt(num /10);
   }
   document.getElementById("outputSON").innerHTML = sum;
+
+
 }
-
-
 
 document.getElementById("nameButton").addEventListener("click",fullName);
 function fullName(){
