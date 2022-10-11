@@ -12,6 +12,7 @@
 #gameContainer{
     font-family: "Permanent Marker", cursive;
     text-align: center;
+    text-color: purple;
 }
 #cellContainer{
     display: grid;
