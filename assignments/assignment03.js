@@ -128,7 +128,7 @@ function fullName(){
   let title = document.getElementById("titles").value;
   let suffix = document.getElementById("suffix").value;
   if(fName=="First Name" || lName=="Last Name"){
-    alert("you havent entered anything for first or last name");
+    alert("you havent entered every data field");
   }  
   if (title!="none" && suffix !="none"){
       document.getElementById("full name").innerHTML = title + " " + fName + " " + lName + " " + suffix;
