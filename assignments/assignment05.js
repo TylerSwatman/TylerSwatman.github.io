@@ -1,13 +1,15 @@
+
+
 let loans = [
   { loan_year: 2020, loan_amount: 10000.0, loan_int_rate: 0.0453 },
-  { loan_year: 2021, loan_amount: 10000.0, loan_int_rate: 0.0453 },
+    { loan_year: 2021, loan_amount: 10000.0, loan_int_rate: 0.0453 },
   { loan_year: 2022, loan_amount: 10000.0, loan_int_rate: 0.0453 },
-  { loan_year: 2023, loan_amount: 10000.0, loan_int_rate: 0.0453 },
+    { loan_year: 2023, loan_amount: 10000.0, loan_int_rate: 0.0453 },
   { loan_year: 2024, loan_amount: 10000.0, loan_int_rate: 0.0453 }
 ];
 
 let loanWithInterest = 0;
-let int = 0;
+  let int = 0;
 let payments;
 
 
@@ -17,7 +19,7 @@ function toComma(value) {
 
 
 let toMoney = (value) => {
-  return `\$${toComma(value.toFixed(2))}`;
+  return   `\$${toComma(value.toFixed(2))}`;
 };
 
 
@@ -31,71 +33,70 @@ let loadForm = () => {
     loans = JSON.parse(localStorage.getItem(`as06`));
     updateForm();
   } else {
-    alert(`Error: no saved values`);
+     alert(`Error: no saved values`);
   }
 };
 
 
-function loadDoc() {
 
-  var defaultYear = loans[0].loan_year; 
-  $("#loan_year0" + 1).val(defaultYear++); 
+function loadDoc() {
+  
+  var defaultYear = loans[0].loan_year;
+    $("#loan_year0" + 1).val(defaultYear++); 
   var defaultLoanAmount = loans[0].loan_amount;
   $("#loan_amt0" + 1).val(defaultLoanAmount.toFixed(2)); 
   var defaultInterestRate = loans[0].loan_int_rate;
-  $("#loan_int0" + 1).val(defaultInterestRate); /
-  var loanWithInterest = loans[0].loan_amount * (1 + loans[0].loan_int_rate);
+  $("#loan_int0" + 1).val(defaultInterestRate); 
+   var loanWithInterest = loans[0].loan_amount * (1 + loans[0].loan_int_rate);
   $("#loan_bal0" + 1).text(toMoney(loanWithInterest)); 
 
-  
   for (var i = 2; i < 6; i++) {
-    $(`#loan_year0${i}`).val(defaultYear++); 
-    $(`#loan_year0${i}`).attr("disabled", "true"); 
+    $(`#loan_year0${i}`).val(defaultYear++); //increment year
+    $(`#loan_year0${i}`).attr("disabled", "true"); //it cant be edited
     $(`#loan_year0${i}`).css({
       backgroundColor: "grey",
       color: "white"
-    }); 
+    });
     $(`#loan_amt0${i}`).val(defaultLoanAmount.toFixed(2));
-    $(`#loan_int0${i}`).val(defaultInterestRate);
+     $(`#loan_int0${i}`).val(defaultInterestRate);
     $(`#loan_int0${i}`).attr("disabled", "true");
-    $(`#loan_int0${i}`).css({
+      $(`#loan_int0${i}`).css({
       backgroundColor: "grey",
       color: "white"
     });
     loanWithInterest = 
       (loanWithInterest + defaultLoanAmount) * (1 + defaultInterestRate);
-    $("#loan_bal0" + i).text(toMoney(loanWithInterest)); 
+    $("#loan_bal0" + i).text(toMoney(loanWithInterest));
   } 
 
-
+  
   $("input[type=text]").focus(function () {
     $(this).select();
     $(this).css("background-color", "yellow");
   });
-
+ 
   $("input[type=text]").blur(function () {
     $(this).css("background-color", "white");
     updateLoansArray();
   });
 
 
-} /
+} 
 
 
 function updateLoansArray() {
-
  
-  let yearP = /^(19|20)\d{2}$/; //has to be 19 or 20 at the start and followed by two numbers
-  let amtP = /^([1-9][0-9]*)+(.[0-9]{1,2})?$/; //first digit has to start 1-9 and followed by none, one or more additional digits and then plus two or one decimal digit.
-  let intP = /^(0|)+(.[0-9]{1,5})?$/; //have zero at the start have 1 to 5 decimal places
+
+  let yearP = /^(19|20)\d{2}$/; 
+  let amtP = /^([1-9][0-9]*)+(.[0-9]{1,2})?$/; 
+  let intP = /^(0|)+(.[0-9]{1,5})?$/; 
   let valid = true;
 
- 
   if (!yearP.test($(`#loan_year01`).val())) {
     valid = false;
     $(`#loan_year01`).css("background-color", "red");
   }
- 
+
   for (i = 1; i < 6; i++) {
     if (!amtP.test($(`#loan_amt0${i}`).val())) {
       valid = false;
@@ -108,7 +109,7 @@ function updateLoansArray() {
     $(`#loan_int01`).css("background-color", "red");
   }
 
-
+ 
   if (valid) {
     loans[0].loan_year = parseInt($("#loan_year01").val());
     for (var i = 1; i < 5; i++) {
@@ -127,6 +128,7 @@ function updateLoansArray() {
   } 
 } 
 
+
 let updateForm = () => {
   loanWithInterest = 0;
   let totalAmt = 0;
@@ -141,30 +143,30 @@ let updateForm = () => {
     $("#loan_bal0" + i).text(toMoney(loanWithInterest));
   }
   int = loanWithInterest - totalAmt;
-  $(`#loan_int_accrued`).text(toMoney(int)); /
+  $(`#loan_int_accrued`).text(toMoney(int)); 
 }; 
+
 
 
 var app = angular.module("myApp", []);
 
 
 app.controller("myCtrl", function ($scope) {
-  $scope.payments = []; // controller connects with the view in HTML
+  $scope.payments = []; 
   $scope.populate = function () {
    
-
-    updateForm(); //updates form
+    updateForm(); 
 
     //payments
-    let total = loanWithInterest; //calculate total
+    let total = loanWithInterest; 
     let iRate = loans[0].loan_int_rate;
     let r = iRate / 12;
     let n = 11;
-  
+
     let pay =
       12 * (total / (((1 + r) ** (n * 12) - 1) / (r * (1 + r) ** (n * 12)))); 
     for (let i = 0; i < 10; i++) {
-     
+    
       total -= pay;
       let int = total * iRate;
       $scope.payments[i] = {
@@ -174,7 +176,7 @@ app.controller("myCtrl", function ($scope) {
         ye: toMoney((total += int))
       };
     }
-   
+ 
     $scope.payments[10] = {
       year: loans[4].loan_year + 11,
       payment: toMoney(total),
@@ -183,4 +185,3 @@ app.controller("myCtrl", function ($scope) {
     };
   };
 });
-
