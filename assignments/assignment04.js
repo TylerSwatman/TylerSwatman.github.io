@@ -1,11 +1,11 @@
 
-let rando = (start, max) => (
+let rand = (start, max) => (
   (Math.floor(Math.random() * (max-start)) + start)
 )
 
-let array1 =[rando(100,1000),rando(100,1000),rando(100,1000),rando(100,1000),rando(100,1000),rando(100,1000),rando(100,1000),rando(100,1000),rando(100,1000),rando(100,1000)]
+let arr1 =[rand(100,1000),rand(100,1000),rand(100,1000),rand(100,1000),rand(100,1000),rand(100,1000),rand(100,1000),rand(100,1000),rand(100,1000),rand(100,1000)]
 
-let array2 = [rando(-200,200),rando(-200,200),rando(-200,200),rando(-200,200),rando(-200,200),rando(-200,200),rando(-200,200),rando(-200,200),rando(-200,200),rando(-200,200)]
+let arr2 = [rand(-200,200),rand(-200,200),rand(-200,200),rand(-200,200),rand(-200,200),rand(-200,200),rand(-200,200),rand(-200,200),rand(-200,200),rand(-200,200)]
 
 
 
